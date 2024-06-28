@@ -14,8 +14,8 @@ st.set_page_config(page_title="Application Crédit")
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Définir l'URL de l'API
-#url = "https://ludo-test-may-123.azurewebsites.net/"
-url = "http://127.0.0.1:5000/"
+url = "https://ludo-test-may-123.azurewebsites.net/"
+#url = "http://127.0.0.1:5000/"
 
 @st.cache_data
 def load_data(uploaded_file):
