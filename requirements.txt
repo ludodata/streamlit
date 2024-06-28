@@ -5,3 +5,5 @@ shap==0.45.1
 matplotlib==3.8.4
 seaborn==0.12.2
 plotly==5.22.0
+imbalanced-learn==0.12.3
+xgboost==2.0.3
