@@ -25,7 +25,7 @@ def load_data(uploaded_file):
     return pd.read_csv(uploaded_file)
 
 # Chemins vers les fichiers CSV
-base = 'p8basev2.csv'  
+base = 'p8basev10.csv'  
 
 # Charger les données d'entraînement
 df_base = load_data(base)
