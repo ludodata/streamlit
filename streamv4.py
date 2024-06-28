@@ -10,6 +10,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
+
+
+
 st.set_page_config(page_title="Application Crédit")
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
