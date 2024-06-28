@@ -1,12 +1,12 @@
 import streamlit as st
 import pandas as pd
 import requests
-#import json
+
 import plotly.graph_objects as go
 import pickle
 import shap
 import matplotlib.pyplot as plt
-#from xgboost import XGBClassifier
+
 import seaborn as sns
 
 
@@ -25,7 +25,7 @@ def load_data(uploaded_file):
     return pd.read_csv(uploaded_file)
 
 # Chemins vers les fichiers CSV
-base = 'p8_base_ok_v2.csv'  
+base = 'p8basev2.csv'  
 
 # Charger les données d'entraînement
 df_base = load_data(base)
