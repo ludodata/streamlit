@@ -129,28 +129,25 @@ def main():
 
             # FEATURE IMPORTANCE avec SHAP
             model = pickle.load(open('boostv4_df.pkl', 'rb'))
-            #explainer = shap.TreeExplainer(model.named_steps['classifier'])
-            #shap_values = explainer.shap_values(df_ok)
+            explainer = shap.TreeExplainer(model.named_steps['classifier'])
+            shap_values = explainer.shap_values(df_ok)
 
-            #modif
-            explainer5 = shap.Explainer(model.named_steps['classifier'], df_ok)
-            shap_values5 = explainer5(df_ok)
-
-            # Importance globale
+            
+            #Importance globale
             st.header("Importances globales")
             fig_shap_summary = plt.figure()
-            shap.plots.bar(shap_values5)
+            shap.summary_plot(shap_values, df_ok, show=False)
             st.pyplot(fig_shap_summary)
-
-
-            shap.plots.waterfall(pd.DataFrame(selected_data2, columns=df_ok.columns))
-
 
             # Importance locale
             st.header("Importance locale des caractéristiques (SHAP)")
-            fig_shap_force = plt.figure()
-            shap.plots.waterfall(pd.DataFrame(selected_data2, columns=df_ok.columns))
+            shap_values_single = explainer.shap_values(pd.DataFrame(selected_data2, columns=df_ok.columns))
+            fig_shap_force = shap.force_plot(explainer.expected_value, shap_values_single[0], pd.DataFrame(selected_data2, columns=df_ok.columns), matplotlib=True)
             st.pyplot(fig_shap_force)
+            
+
+
+            
                 
 
             
