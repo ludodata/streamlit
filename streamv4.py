@@ -170,6 +170,8 @@ def main():
             y_column = st.selectbox("Sélectionnez la variable pour l'axe Y :", options=list_col, key="y_axis")
             
             fig, ax = plt.subplots(figsize=(10, 6))
+            
+
             sns.scatterplot(data=df_base, x=x_column, y=y_column, hue='TARGET', palette=['#009E73', '#D55E00'], ax=ax)
             # Ajout du point représentant le client sélectionné
             ax.scatter(x=selected_df[x_column], y=selected_df[y_column], color='#FFD700', s=100, label='Client sélectionné')
